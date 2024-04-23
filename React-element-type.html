@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      function Header() {
+        return <div className="header">New Header</div>;
+      }
+      function Content(img) {
+        return (
+          <div className="posts-item">
+            <img
+              style={{ width: "50px" }}
+              src={img.url}
+              alt="LÀ THÀNH VIÊN CỦA F8. BẠN ĐÃ THỰC SỰ SỬ DỤNG F8 HIỆU QUẢ CHƯA?"
+            ></img>
+            <h2 className="post-title"></h2>
+            <p className="post-des">
+              F8 sẽ đưa bạn đến chính xác từng vị trí xảy ra vấn đề. F8 là phím
+              tắt mặc định trong VScode các bạn nhé (không phải cài thêm bất cứ
+              Extensions nào)
+            </p>
+            <p className="post-des">23 ngày trước·12 phút đọc</p>
+          </div>
+        );
+      }
+      function test(para) {
+        return <h1>{para}</h1>;
+      }
+      const imgs = [
+        {
+          img: "https://files.fullstack.edu.vn/f8-prod/blog_posts/9976/65fa652ce3a64.jpg",
+        },
+        {
+          img: "https://files.fullstack.edu.vn/f8-prod/blog_posts/10042/6607a084421fb.png",
+        },
+        {
+          img: "https://files.fullstack.edu.vn/f8-prod/blog_posts/8306/65299d0ce743e.png",
+        },
+      ];
+      //   class Content extends React.Component {
+      //     render() {
+      //       return (
+      //         <div className="posts-item">
+      //           <img
+      //             style={{ width: "50px" }}
+      //             src="https://files.fullstack.edu.vn/f8-prod/blog_posts/10042/6607a084421fb.png"
+      //             alt="LÀ THÀNH VIÊN CỦA F8. BẠN ĐÃ THỰC SỰ SỬ DỤNG F8 HIỆU QUẢ CHƯA?"
+      //           ></img>
+      //           <h2 className="post-title"></h2>
+      //           <p className="post-des">
+      //             `F8` sẽ đưa bạn đến chính xác từng vị trí xảy ra vấn đề. F8 là
+      //             phím tắt mặc định trong VScode các bạn nhé (không phải cài thêm
+      //             bất cứ Extensions nào)
+      //           </p>
+      //           <p className="post-des">23 ngày trước·12 phút đọc</p>
+      //         </div>
+      //       );
+      //     }
+      //   }
+
+      const app = (
+        <div className="wrapper">
+          <Header />
+          {imgs.map((item, index) => (
+            <React.Fragment key={index}>
+              <Content url={item.img} />
+            </React.Fragment>
+          ))}
+          <div className="footer">Footer</div>
+        </div>
+      );
+      console.log(app);
+      ReactDOM.render(app, document.getElementById("app"));
+    </script>
+  </body>
+</html>

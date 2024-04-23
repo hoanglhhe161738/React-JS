@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- 
+        JSX là gì? ==> JavaScript xml   
+     -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      //   const ul = React.createElement(
+      //     "ul",
+      //     null,
+      //     React.createElement("li", null, "JavaScript"),
+      //     React.createElement("li", null, "ReactJs")
+      //   );
+
+      const arrays = [
+        {
+          name: "HTML, CSS",
+        },
+        {
+          name: "Responsive web design",
+        },
+        {
+          name: "ReactJs",
+        },
+      ];
+      const ul = (
+        <ul>
+          {arrays.map((array, index) => (
+            <li key={index}>{array.name}</li>
+          ))}
+        </ul>
+      );
+      console.dir(ul);
+      ReactDOM.render(ul, root);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .Wrapper button,
+      a {
+        text-decoration: none;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+    </style>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root" style="padding: 0 500px"></div>
+
+    <script type="text/babel">
+      const data = [
+        {
+          id: 1,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/1/657686da32787.png",
+          title: "Mở Bán Áo Polo F8 Đợt 2",
+          description:
+            "Áo Polo F8 với thiết kế tối giản, lịch sự, phù hợp mặc mọi lúc, mọi nơi. Chất áo mềm mại, thoáng mát, ngực và tay áo in logo F8 - Fullstack.",
+          alt: "Áo Polo F8",
+          cta_title: "ĐẶT ÁO NGAY",
+          link_to: "https://forms.gle/FZG2n7o7gCRMRiom9",
+          is_blank: 1,
+          is_pro: false,
+          priority: 1,
+          expired: "2025-01-31 12:15:00",
+          created_at: "2022-12-11T16:00:00.000000Z",
+          updated_at: "2024-01-12T09:48:32.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/1/657686da32787.png",
+          show_with_array: [],
+        },
+        {
+          id: 36,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/36/6454dee96205c.png",
+          title: "Lớp Offline tại Hà Nội",
+          description:
+            "Hình thức học Offline phù hợp nếu bạn muốn được hướng dẫn và hỗ trợ trực tiếp tại lớp. Giờ học linh hoạt, phù hợp cả sinh viên và người đi làm.",
+          alt: "F8 - Học lập trình web offline",
+          cta_title: "TƯ VẤN MIỄN PHÍ",
+          link_to: "https://forms.gle/QRHdZ6DG1sg1k4ZN6",
+          is_blank: 1,
+          is_pro: true,
+          priority: 2,
+          expired: "2025-01-12 20:01:00",
+          created_at: "2023-05-05T17:48:09.000000Z",
+          updated_at: "2024-01-12T09:48:17.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/36/6454dee96205c.png",
+          show_with_array: [],
+        },
+        {
+          id: 20,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/20/6308a6bf603a4.png",
+          title: "Học HTML CSS cho người mới",
+          description:
+            "Thực hành dự án với Figma, hàng trăm bài tập và thử thách, hướng dẫn 100% bởi Sơn Đặng, tặng kèm Flashcards, v.v.",
+          alt: "Khóa Học HTML CSS Pro",
+          cta_title: "HỌC THỬ MIỄN PHÍ",
+          link_to: "https://fullstack.edu.vn/landing/htmlcss",
+          is_blank: 1,
+          is_pro: true,
+          priority: 3,
+          expired: "2025-12-18 23:59:00",
+          created_at: "2022-08-08T23:35:27.000000Z",
+          updated_at: "2023-12-12T09:27:26.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/20/6308a6bf603a4.png",
+          show_with_array: [],
+        },
+        {
+          id: 8,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/Banner_web_ReactJS.png",
+          title: "Học ReactJS Miễn Phí!",
+          description:
+            "Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.",
+          alt: "Khoá học ReactJS online tại F8",
+          cta_title: "ĐĂNG KÝ NGAY",
+          link_to: "https://fullstack.edu.vn/courses/reactjs?ref=banner",
+          is_blank: 1,
+          is_pro: false,
+          priority: 4,
+          expired: "2025-12-12 00:00:00",
+          created_at: "2022-12-11T17:00:00.000000Z",
+          updated_at: "2023-12-12T09:27:43.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png",
+          show_with_array: [],
+        },
+        {
+          id: 3,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/Banner_01_2.png",
+          title: "Thành Quả của Học Viên",
+          description:
+            "Để đạt được kết quả tốt trong mọi việc ta cần xác định mục tiêu rõ ràng cho việc đó. Học lập trình cũng không là ngoại lệ.",
+          alt: "Thành quả của học viên",
+          cta_title: "XEM THÀNH QUẢ",
+          link_to:
+            "https://fullstack.edu.vn/blog/tong-hop-cac-san-pham-cua-hoc-vien-tai-f8.html",
+          is_blank: 1,
+          is_pro: false,
+          priority: 5,
+          expired: "2025-12-12 00:00:00",
+          created_at: "2022-12-11T17:00:00.000000Z",
+          updated_at: "2023-12-12T09:27:39.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/Banner_01_2.png",
+          show_with_array: [],
+        },
+        {
+          id: 4,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/Banner_03_youtube.png",
+          title: "F8 trên Youtube",
+          description:
+            "F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.",
+          alt: "F8 trên Youtube",
+          cta_title: "ĐĂNG KÝ KÊNH",
+          link_to: "https://www.youtube.com/channel/UCNSCWwgW-rwmoE3Yc4WmJhw",
+          is_blank: 1,
+          is_pro: false,
+          priority: 6,
+          expired: "2025-12-12 00:00:00",
+          created_at: "2022-12-11T17:00:00.000000Z",
+          updated_at: "2023-12-12T09:29:59.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/Banner_03_youtube.png",
+          show_with_array: [],
+        },
+        {
+          id: 5,
+          placement: "home",
+          type: "slideshow",
+          show_with: null,
+          slot_id: null,
+          banner: "banners/Banner_04_2.png",
+          title: "F8 trên Facebook",
+          description:
+            "F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.",
+          alt: "THAM GIA NHÓM",
+          cta_title: "THAM GIA NHÓM",
+          link_to: "https://www.facebook.com/f8vnofficial",
+          is_blank: 1,
+          is_pro: false,
+          priority: 7,
+          expired: "2025-12-12 00:00:00",
+          created_at: "2022-12-11T17:00:00.000000Z",
+          updated_at: "2023-12-12T09:29:33.000000Z",
+          banner_url:
+            "https://files.fullstack.edu.vn/f8-prod/banners/Banner_04_2.png",
+          show_with_array: [],
+        },
+      ];
+
+      const Form = {
+        Input() {
+          return <input />;
+        },
+        CheckBox() {
+          return <input type="checkbox" />;
+        },
+      };
+      const root = document.getElementById("root");
+
+      function Button({ title, href, onClick }) {
+        let Component = "button";
+
+        const props = {};
+        console.log(onClick);
+
+        if (href) {
+          props.href = href;
+          Component = "a";
+        }
+        if (onClick) {
+          props.onClick = onClick;
+        }
+
+        return <Component {...props}>{title}</Component>;
+      }
+      function App() {
+        const handleClick = (course) => {
+          console.log(course);
+        };
+        const type = "CheckBox";
+        const Component = Form[type];
+
+        const firstAccess = true;
+
+        return (
+          <div className="Wrapper">
+            <Button
+              title="Click me"
+              href="https://fullstack.edu.vn/learning-paths?_type=tab"
+              onClick={() => console.log(Math.random())}
+            />
+            {firstAccess == 2 && <h1>Welcome to f8</h1>}
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, root);
+
+      function Product(props) {
+        return (
+          <div
+            style={{
+              width: "500px",
+              padding: "10px",
+              border: "1px solid black",
+              borderRadius: "10px",
+              marginBottom: "20px",
+            }}
+          >
+            <h2 onClick={() => props.onClick(props.title)}>{props.title}</h2>
+            <p>{props.des}</p>
+            <img style={{ width: "400px" }} src={props.url} />
+          </div>
+        );
+      }
+    </script>
+  </body>
+</html>
